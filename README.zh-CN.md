@@ -4,6 +4,8 @@
 
 这是一个基于 [typora-community-plugin][core] 开发的，适用于 [Typora](https://typora.io) 的插件。
 
+## 特性
+
 - 相对于当前笔记目录的根目录解析图片路径，类似 Obsidian。
 
   > **例子**
@@ -18,9 +20,13 @@
   >
   > 然后我们就可以这样引用图片: `![](image.png)`，它会被解析为 `![]({笔记目录路径}/assets/image.png)`。
 
+- 应用设置 → 图片 → 图片上传设置 → 命令，支持指令 `${vault}`（它会被解析为当前笔记目录的根路径）
+
 ## 预览
 
-![](./docs/assets/base.jpg)
+| 相对于当前笔记根目录的图片   | 相对于当前笔记根目录的 `typora-root-url` |
+|:-----------------------:|:-----------------------------------:|
+| ![](./docs/assets/base.jpg) | ![](./docs/assets/local-root-path.jpg) |
 
 ## 安装
 

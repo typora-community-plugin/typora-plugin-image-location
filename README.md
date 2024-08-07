@@ -4,6 +4,8 @@ English | [简体中文](./README.zh-CN.md)
 
 This a plugin based on [typora-community-plugin][core] for [Typora](https://typora.io).
 
+## Features
+
 - Resolve image's path relative to the vault's root.
 
   > **Example**
@@ -16,11 +18,15 @@ This a plugin based on [typora-community-plugin][core] for [Typora](https://typo
   >
   > `typora-root-url: /assets` → `typora-root-url: {vault-path}/assets`
   >
-  > The we can use the image like this: `![](image.png)`, it will be resolved to `![]({vault-path}/assets/image.png)`.
+  > Then we can use the image like this: `![](image.png)`, it will be resolved to `![]({vault-path}/assets/image.png)`.
+
+- App Settings → Image → Image Upload Setting → Command, supports new instruction `${vault}` (it will be replaced to the vault's root path)
 
 ## Preview
 
-![](./docs/assets/base.jpg)
+| image from vault's root | `typora-root-url` from vault's root |
+|:-----------------------:|:-----------------------------------:|
+| ![](./docs/assets/base.jpg) | ![](./docs/assets/local-root-path.jpg) |
 
 ## Install
 

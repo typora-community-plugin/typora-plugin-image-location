@@ -1,5 +1,5 @@
 import { path, Plugin, decorate } from '@typora-community-plugin/core'
-import { editor } from 'typora'
+import { editor, File } from 'typora'
 
 
 export default class extends Plugin {
@@ -22,6 +22,15 @@ export default class extends Plugin {
           url = path.join(this.app.vault.path, url)
         }
         return url
+      }))
+
+    // Pass vault root to custom uploader
+    this.register(
+      decorate.returnValue(editor.imgEdit, 'getImageUploaderCommand', (args, uploader) => {
+        if (File.option.imageUploader === 'custom') {
+          uploader = uploader.replace(/\$\{vault\}/g, this.app.vault.path)
+        }
+        return uploader
       }))
   }
 }

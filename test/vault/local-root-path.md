@@ -4,4 +4,5 @@ typora-root-url: /assets
 
 # Image Location 2
 
-![](base.jpg)
+![](daniil-silantev-BpQVjdf6qYg-unsplash.jpg)
+

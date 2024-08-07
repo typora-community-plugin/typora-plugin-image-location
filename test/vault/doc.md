@@ -1,4 +1,4 @@
 # Image Location
 
-![](/assets/base.jpg)
+![](/assets/daniil-silantev-BpQVjdf6qYg-unsplash.jpg)
 
