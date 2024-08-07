@@ -14,5 +14,14 @@ export default class extends Plugin {
         }
         return [url] as [string]
       }))
+
+    // Front Matter `typora-root-url` support relative path from vault root as absolute path
+    this.register(
+      decorate.returnValue(editor.docMenu, 'getLocalRootUrl', ([], url) => {
+        if (url && /^[/\\]/.test(url)) {
+          url = path.join(this.app.vault.path, url)
+        }
+        return url
+      }))
   }
 }

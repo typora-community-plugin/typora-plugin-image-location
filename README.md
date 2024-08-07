@@ -4,11 +4,19 @@ English | [简体中文](./README.zh-CN.md)
 
 This a plugin based on [typora-community-plugin][core] for [Typora](https://typora.io).
 
-- Resolve image's path relative to vault's root.
+- Resolve image's path relative to the vault's root.
 
   > **Example**
   >
-  > `/assets/image.png` -> `{vault-path}/assets/image.png`
+  > `/assets/image.png` → `{vault-path}/assets/image.png`
+
+- Resolve Front Matter `typora-root-url` relative to the vault's root.
+
+  > **Example**
+  >
+  > `typora-root-url: /assets` → `typora-root-url: {vault-path}/assets`
+  >
+  > The we can use the image like this: `![](image.png)`, it will be resolved to `![]({vault-path}/assets/image.png)`.
 
 ## Preview
 

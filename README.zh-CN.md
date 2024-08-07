@@ -6,9 +6,17 @@
 
 - 相对于当前笔记目录的根目录解析图片路径，类似 Obsidian。
 
-  > **Example**
+  > **例子**
   >
   > 例如 `/assets/image.png` 被解析为 `{笔记目录路径}/assets/image.png` 而不用写冗长的绝对路径或复杂的相对路径。
+
+- 相对于当前笔记目录的根目录解析 Front Matter 属性 `typora-root-url`
+
+  > **例子**
+  >
+  > `typora-root-url: /assets` → `typora-root-url: {笔记目录路径}/assets`
+  >
+  > 然后我们就可以这样引用图片: `![](image.png)`，它会被解析为 `![]({笔记目录路径}/assets/image.png)`。
 
 ## 预览
 
