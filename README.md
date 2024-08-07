@@ -20,7 +20,13 @@ This a plugin based on [typora-community-plugin][core] for [Typora](https://typo
   >
   > Then we can use the image like this: `![](image.png)`, it will be resolved to `![]({vault-path}/assets/image.png)`.
 
-- App Settings → Image → Image Upload Setting → Command, supports new instruction `${vault}` (it will be replaced to the vault's root path)
+- App Settings → Image → Image Upload Setting → Command, supports new placeholder `${vault}` (it will be replaced to the vault's root path)
+
+- After an image is inserted, the image's absolute path will be simplified to relative path from vault root.
+
+  > **Example**
+  >
+  > `{vault-path}/assets/image.png` → `/assets/image.png`
 
 ## Preview
 

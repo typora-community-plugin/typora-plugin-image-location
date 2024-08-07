@@ -32,5 +32,24 @@ export default class extends Plugin {
         }
         return uploader
       }))
+
+    // Simplify absolute path to relative path from vault root.
+    this.register(
+      decorate.returnValue(editor.imgEdit, 'resolveImagePath', (args, imgPath) => {
+        const vaultPath = this.app.vault.path
+        const prefix = `file://${vaultPath}`
+
+        if (imgPath.startsWith(prefix)) {
+          imgPath = imgPath.slice(prefix.length)
+        }
+        else if (imgPath.startsWith(vaultPath)) {
+          imgPath = imgPath.slice(vaultPath.length)
+            .replace(/\\/g, '/')
+        }
+        else if (imgPath.startsWith('file://./')) {
+          imgPath = imgPath.slice(9)
+        }
+        return imgPath
+      }))
   }
 }
